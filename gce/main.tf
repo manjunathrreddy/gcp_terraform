@@ -1,12 +1,12 @@
 data "google_compute_image" "test_image" {
     family = "app-family"
-    project = ""
+    project = "snappy-cosine-198513"
 
 
 }
 
 resource "google_compute_instance" "test_instance" {
-    for-each = { for test_instance in var.test_servers : test_instance.id => test_instance }
+    for_each = { for test_instance in var.test_servers : test_instance.id => test_instance }
     name = each.value.compute_instance_name
     machine_type = each.value.compute_machine_type
     zone = each.value.compute_zone
