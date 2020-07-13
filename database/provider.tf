@@ -1,8 +1,8 @@
 
-variable "path" {default = "/home/udemy/terraform/credentials"}
+variable "path" {default = "/home/cicd-user/gcp_credentials/keys"}
 
 provider "google" {
     project = "festive-zoo-239708"
     region = "europe-west2-a"
-    credentials = "${file("${var.path}/secrets.json")}"
+    credentials = "${file("${var.path}/credentials.json")}"
 }
