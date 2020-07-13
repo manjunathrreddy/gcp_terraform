@@ -1,5 +1,5 @@
 variable "test_servers" { 
-    type = list()  
+    type = list(any)  
 
 }
 
