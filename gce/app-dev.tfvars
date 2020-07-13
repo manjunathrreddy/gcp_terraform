@@ -9,7 +9,7 @@ test_servers = [{
     compute_subnet = "home-net-ds-dev"
     compute_zone = "us-east2-a"
     compute_size = "100"
-},]
+}]
 
 disk_zone = "us-east1-b"
 disk_type = "pd-ssd"
