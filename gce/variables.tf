@@ -1,6 +1,6 @@
 variable "test_servers" { 
     type = list(any)  
-    default = 0
+    default = ""
 }
 
 variable "disk_zone" { default = "" }
