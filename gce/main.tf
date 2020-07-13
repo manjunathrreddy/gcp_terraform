@@ -5,7 +5,7 @@ data "google_compute_image" "test_image" {
 
 }
 
-resource "google_compute_instance" "test_instance"{
+resource "google_compute_instance" "test_instance" {
     for-each = { for test_instance in var.test_servers : test_instance.id => test_instance }
     name = each.value.compute_instance_name
     machine_type = each.value.compute_machine_type
