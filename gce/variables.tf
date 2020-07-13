@@ -22,6 +22,6 @@ variable "disk_name" {
 
 variable "disk_size" {
     type = string
-    default = ""
+    default = "test"
 
 }
