@@ -1,4 +1,4 @@
-variable "test_servers" { type = list(any) }
+variable "test_servers" { type = list(any)  default = 0}
 
 variable "disk_zone" { default = "" }
 
