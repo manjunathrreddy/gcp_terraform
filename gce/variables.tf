@@ -2,26 +2,10 @@ variable "instance_servers {
     type = list(any)
 }
 
-variable "disk_zone" {
-    type = string
-    default = ""
+variable "disk_zone" {     default = "" }
 
-}
+variable "disk_type" { default = "" }
 
-variable "disk_type" {
-    type = string
-    default = ""
+variable "disk_name" { default = "" }
 
-}
-
-variable "disk_name" {
-    type = string
-    default = ""
-    
-}
-
-variable "disk_size" {
-    type = string
-    default = "test"
-
-}
+variable "disk_size" { default = "" }
