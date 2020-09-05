@@ -1,4 +1,4 @@
-variable "path" {  default = "/home/cicd-user/gcp_credentials/keys" }
+variable "path" {  default = "/home/vagrant/gcp_credentials/keys" }
 
 provider "google" {
     project = "snappy-cosine-198513"
