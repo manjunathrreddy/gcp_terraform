@@ -7,7 +7,7 @@ test_servers = [{
     compute_image = "c0-common-gce-gpu-image-20200128"
     compute_network = "default"
     compute_subnet = "home-net-ds-dev"
-    compute_zone = "asia-south1-c"
+    compute_zone = "asia-south1-b"
     compute_size = "100"
 },]
 
