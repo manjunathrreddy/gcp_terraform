@@ -1,29 +1,53 @@
 
-resource "google_compute_instance" "test_instance" {
-    for_each = { for test_instance in var.test_servers : test_instance.id => test_instance }
-    name = each.value.compute_instance_name
-    machine_type = each.value.compute_machine_type
-    zone = each.value.compute_zone
-    can_ip_forward = "false"
+variable "path" {  default = "/home/vagrant/gcp_credentials/keys" }
 
-//    tags = ["",""]
+provider "google" {
+    project = "triple-virtue-271517"
+    region = "asia-south1"
+    zone = "us-central1-a"
+    credentials = "${file("${var.path}/triple-virtue.json")}"
+  
+}
+
+resource "google_compute_instance" "test_instance" {
+    
+    name            = "demo-01"
+    machine_type    = "e2-standard-2"
+    zone            = "us-central1-a"
+    can_ip_forward  = "false"
+    user_data       = "${file("userdata.sh")}"
+
+    tags = ["web"]
 
     boot_disk {
         initialize_params {
             image = "centos-8"
-            size = "50"
+            size = "100"
         }
     }
 
     network_interface {
-        network = each.value.compute_network
+        network = "default"
     }
-
-    service_account {
-        scopes = ["userinfo-email", "compute-ro", "storage-ro"]
-    }
-
-     
 
 }
 
+resource "google_compute_firewall" "default" {
+  name    = "test-firewall"
+  network = google_compute_network.default.name
+
+  allow {
+    protocol = "icmp"
+  }
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "8080", "1000-2000"]
+  }
+
+  source_tags = ["web"]
+}
+
+resource "google_compute_network" "default" {
+  name = "test-network"
+}
