@@ -6,7 +6,7 @@ resource "google_compute_instance" "test_instance" {
     zone = each.value.compute_zone
     can_ip_forward = "false"
 
-    tags = ["",""]
+//    tags = ["",""]
 
     boot_disk {
         initialize_params {
@@ -15,15 +15,7 @@ resource "google_compute_instance" "test_instance" {
         }
     }
 
-    network_interface {
-        network = each.value.compute_network
-    }
-
-    service_account {
-        scopes = ["userinfo-email", "compute-ro", "storage-ro"]
-    }
-
-     
+   
 
 }
 
