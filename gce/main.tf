@@ -1,9 +1,3 @@
-data "google_compute_image" "test_image" {
-    family = "app-family"
-    project = "snappy-cosine-198513"
-
-
-}
 
 resource "google_compute_instance" "test_instance" {
     for_each = { for test_instance in var.test_servers : test_instance.id => test_instance }
@@ -16,8 +10,8 @@ resource "google_compute_instance" "test_instance" {
 
     boot_disk {
         initialize_params {
-            image = data.google_compute_image.self_link
-            size = each.value.compute_size
+            image = "centos-8"
+            size = "50"
         }
     }
 
@@ -31,19 +25,5 @@ resource "google_compute_instance" "test_instance" {
 
      
 
-}
-
-resource "google_compute_disk" "compute_disk" {
-    name = var.disk_name
-    type = var.disk_type
-    zone = var.disk_zone
-    size = var.disk_size
-}
-
-resource "google_compute_attached_disk" "additional_attached_disk" {
-    count = length(var.test_servers)
-    disk = google_compute_disk.compute_disk.self_link
-    instance = google_compute_instance.test_servers[count.index+1].self_link
-    
 }
 
