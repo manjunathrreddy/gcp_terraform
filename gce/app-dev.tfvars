@@ -2,7 +2,7 @@ project_id = "snappy-cosine-198513"
 
 test_servers = [{
     id = 1
-    compute_instance_name = "Test-Instance"
+    compute_instance_name = "demo1"
     compute_machine_type = "e2-standard-2"
     compute_image = "c0-common-gce-gpu-image-20200128"
     compute_network = "home-net-dev"
