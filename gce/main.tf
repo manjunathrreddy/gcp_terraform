@@ -15,7 +15,15 @@ resource "google_compute_instance" "test_instance" {
         }
     }
 
-   
+    network_interface {
+        network = each.value.compute_network
+    }
+
+    service_account {
+        scopes = ["userinfo-email", "compute-ro", "storage-ro"]
+    }
+
+     
 
 }
 
