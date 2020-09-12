@@ -3,7 +3,7 @@ variable "path" {  default = "/home/vagrant/gcp_credentials/keys" }
 
 provider "google" {
     project = "triple-virtue-271517"
-    region = "asia-south1"
+    region = "us-central1"
     zone = "us-central1-a"
     credentials = "${file("${var.path}/triple-virtue.json")}"
   
@@ -13,7 +13,6 @@ resource "google_compute_instance" "test_instance" {
     
     name            = "demo-01"
     machine_type    = "e2-standard-2"
-    zone            = "us-central1-a"
     metadata_startup_script = <<-EOF
     #!/bin/bash
     yum update 
