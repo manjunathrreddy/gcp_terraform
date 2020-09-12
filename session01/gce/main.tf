@@ -14,11 +14,11 @@ resource "google_compute_instance" "test_instance" {
     name            = "demo-01"
     machine_type    = "e2-standard-2"
     zone            = "us-central1-a"
-    user_data       = "<< EOF  #!/bin/bash \
-                                yum update \
-                              yum install httpd \
-                              systemctl start httpd \
-                              systemctl enable httpd \
+    user_data       = "<< EOF  #!/bin/bash \n
+                                yum update \n
+                              yum install httpd \n
+                              systemctl start httpd \n
+                              systemctl enable httpd \n
                           EOF"
     can_ip_forward  = "false"
     
