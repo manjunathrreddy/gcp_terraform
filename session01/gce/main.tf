@@ -40,6 +40,7 @@ resource "google_compute_instance" "test_instance" {
     
     name            = "demo-01"
     machine_type    = "e2-standard-2"
+    zone = "us-central1-a"
     metadata_startup_script = <<-EOF
     #!/bin/bash
     yum update 
