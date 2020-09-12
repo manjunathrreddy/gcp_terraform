@@ -21,17 +21,18 @@ resource "google_compute_instance" "test_instance" {
     systemctl start httpd
     systemctl enable httpd
     EOF
-    
+
     can_ip_forward  = "false"
     
     tags = ["web"]
 
     boot_disk {
-        initialize_
-        params {
-            image           = "centos-8"
-            size            = "100"
-            user_data       = "${file("httpd_install.sh")}"
+      
+    initialize_params{
+
+          image           = "centos-8"
+          size            = "100"
+            
 
         }
     }
