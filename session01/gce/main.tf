@@ -9,6 +9,33 @@ provider "google" {
   
 }
 
+resource "google_compute_firewall" "allow-http-port" {
+    name = "allow-http-port"
+    network = "default"
+
+    allow {
+        protocol = "tcp"
+        ports = ["80"]
+    }
+
+    target_tags = ["allow-http"]
+      
+}
+
+resource "google_compute_firewall" "allow-https-port" {
+    name = "allow-https-port"
+    network = "default"
+
+    allow {
+        protocol = "tcp"
+        ports = ["443"]
+    }
+
+    target_tags = ["allow-https"]
+      
+}
+
+
 resource "google_compute_instance" "test_instance" {
     
     name            = "demo-01"
@@ -21,7 +48,7 @@ resource "google_compute_instance" "test_instance" {
     systemctl enable httpd
     EOF
 
-    tags = ["web"]
+    tags = ["allow-http","allow-http"]
 
     boot_disk {
       
@@ -40,19 +67,4 @@ resource "google_compute_instance" "test_instance" {
 
 }
 
-resource "google_compute_firewall" "default" {
-  name = "testfirewall"
-  network = "default"
-
-  allow {
-    protocol = "icmp"
-  }
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80", "8080", "1000-2000"]
-  }
-
-  source_tags = ["web"]
-}
 
