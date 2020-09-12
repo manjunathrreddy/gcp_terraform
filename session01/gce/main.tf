@@ -42,7 +42,7 @@ resource "google_compute_instance" "test_instance" {
 }
 
 resource "google_compute_firewall" "default" {
-  name = "Test-Firewall"
+  name = "testfirewall"
   network = "default"
 
   allow {
