@@ -43,7 +43,7 @@ resource "google_compute_instance" "test_instance" {
 
 resource "google_compute_firewall" "default" {
   name    = "test-firewall"
-  network = google_compute_network.default.name
+  network = "default"
 
   allow {
     protocol = "icmp"
