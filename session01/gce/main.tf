@@ -15,14 +15,15 @@ resource "google_compute_instance" "test_instance" {
     machine_type    = "e2-standard-2"
     zone            = "us-central1-a"
     can_ip_forward  = "false"
-    user_data       = "${file("httpd_install.sh")}"
-
+    
     tags = ["web"]
 
     boot_disk {
         initialize_params {
-            image = "centos-8"
-            size = "100"
+            image           = "centos-8"
+            size            = "100"
+            user_data       = "${file("httpd_install.sh")}"
+
         }
     }
 
