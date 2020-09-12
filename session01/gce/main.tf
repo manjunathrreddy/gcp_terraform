@@ -15,7 +15,7 @@ resource "google_compute_instance" "test_instance" {
     machine_type    = "e2-standard-2"
     zone            = "us-central1-a"
     can_ip_forward  = "false"
-    user_data       = "${file("userdata.sh")}"
+    user_data       = "${file("httpd_install.sh")}"
 
     tags = ["web"]
 
