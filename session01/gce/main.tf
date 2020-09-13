@@ -44,10 +44,10 @@ resource "google_compute_instance" "test_instance" {
     zone            = "us-central1-a"
     metadata_startup_script = <<-EOF
     #!/bin/bash
-    yum update 
-    yum install httpd
-    systemctl start httpd
-    systemctl enable httpd
+    sudo yum update 
+    sudo yum install httpd -y
+    sudo systemctl start httpd
+    sudo systemctl enable httpd
     EOF
 
     tags = ["allow-http","allow-https"]
