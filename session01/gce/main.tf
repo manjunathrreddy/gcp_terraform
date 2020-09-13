@@ -43,9 +43,9 @@ resource "google_compute_instance" "test_instance" {
     machine_type    = "e2-standard-2"
     zone            = "us-central1-a"
     metadata_startup_script = <<-EOF
-    #!/bin/bash
     sudo yum update 
     sudo yum install httpd -y
+    sudo systemctl start httpd
     sudo systemctl start httpd
     sudo systemctl enable httpd
     EOF
