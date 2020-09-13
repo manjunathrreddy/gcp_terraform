@@ -28,4 +28,9 @@ resource "google_compute_instance" "default" {
         network = "default"
     }
 
+    metadata = {
+        size = "20"
+        foo = "bar"
+    }
+
 }
