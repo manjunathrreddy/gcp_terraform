@@ -1,29 +1,36 @@
 
-resource "google_compute_instance" "test_instance" {
-    for_each = { for test_instance in var.test_servers : test_instance.id => test_instance }
-    name = each.value.compute_instance_name
-    machine_type = each.value.compute_machine_type
-    zone = each.value.compute_zone
-    can_ip_forward = "false"
+resource "google_compute_instance" "default" {
+    
+    count = var.machine_count
+    name = "list-${count.index+1}"
+    machine_type = var.environment != "production" ? var.machine_type : var.machine_type_dev
+    metadata_startup_script = "${file("httpd_install.sh")}" 
+    
 
-//    tags = ["",""]
+    zone = "asia-south1-a"
+    can_ip_forward = "false"
+    description = "This is our virtual machines"
+
+        tags = ["allow-http","allow-https"]
+
+  
+
 
     boot_disk {
         initialize_params {
-            image = "centos-8"
-            size = "50"
+            image = var.image
+            size = var.machine_size
         }
     }
 
+
     network_interface {
-        network = each.value.compute_network
+        network = "default"
     }
 
-    service_account {
-        scopes = ["userinfo-email", "compute-ro", "storage-ro"]
+
+    metadata = {
+        size = "20"
+        foo = "bar"
     }
-
-     
-
 }
-
