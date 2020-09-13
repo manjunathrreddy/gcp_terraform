@@ -49,7 +49,7 @@ resource "google_compute_instance" "test_instance" {
     systemctl enable httpd
     EOF
 
-    tags = ["allow-http","allow-http"]
+    tags = ["allow-http","allow-https"]
 
     boot_disk {
       
@@ -64,6 +64,10 @@ resource "google_compute_instance" "test_instance" {
 
     network_interface {
         network = "default"
+    
+            access_config {
+      // Ephemeral IP
+        }
     }
 
     service_account {
