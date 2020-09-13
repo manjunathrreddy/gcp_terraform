@@ -7,7 +7,6 @@ resource "google_compute_instance" "default" {
     metadata_startup_script = "${file("httpd_install.sh")}" 
     
 
-    zone = "asia-south1-a"
     can_ip_forward = "false"
     description = "This is our virtual machines"
 
