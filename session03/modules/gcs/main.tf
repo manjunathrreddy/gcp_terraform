@@ -21,11 +21,7 @@ resource "google_storage_bucket" "app_encrypt_bucket" {
         default_google_key_name = var.encryption_link
     }
 
-    depends_on = {
-        null_resourse.data_class_valid,
-        null_resourse.encryption_valid
 
-    }
 
     
 

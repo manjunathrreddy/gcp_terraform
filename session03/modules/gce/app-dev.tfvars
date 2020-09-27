@@ -1,4 +1,4 @@
-project_id = "snappy-cosine-198513"
+project_id = "gcp-homecompany-dev"
 
 test_servers = [{
     id = 1
