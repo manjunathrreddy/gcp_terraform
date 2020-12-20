@@ -1,5 +1,5 @@
 
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "test_instance" {
     
     count = length(var.name_count)
     name = "list-${count.index+1}"
