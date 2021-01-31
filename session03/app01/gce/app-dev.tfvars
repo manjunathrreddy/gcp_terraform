@@ -6,7 +6,7 @@ test_servers = [{
     compute_machine_type = "e2-standard-2"
     compute_image = "c0-common-gce-gpu-image-20200128"
     compute_network = "default"
-    compute_subnet = "home-net-ds-dev"
+    compute_subnet = "default"
     compute_zone = "us-central1-a"
     compute_size = "100"
 },
@@ -16,7 +16,7 @@ test_servers = [{
     compute_machine_type = "e2-standard-2"
     compute_image = "c0-common-gce-gpu-image-20200128"
     compute_network = "default"
-    compute_subnet = "home-net-ds-dev"
+    compute_subnet = "default"
     compute_zone = "us-central1-a"
     compute_size = "100"
 },
@@ -26,7 +26,7 @@ test_servers = [{
     compute_machine_type = "e2-standard-2"
     compute_image = "c0-common-gce-gpu-image-20200128"
     compute_network = "default"
-    compute_subnet = "home-net-ds-dev"
+    compute_subnet = "default"
     compute_zone = "us-central1-a"
     compute_size = "100"
 }]
