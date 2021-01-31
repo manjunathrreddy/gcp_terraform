@@ -4,6 +4,7 @@ resource "google_compute_instance" "test_instance" {
     name = each.value.compute_instance_name
     machine_type = each.value.compute_machine_type
     zone = each.value.compute_zone
+    metadata_startup_script = "${file("httpd_install.sh")}" 
     can_ip_forward = "false"
 
 //    tags = ["",""]
@@ -17,6 +18,10 @@ resource "google_compute_instance" "test_instance" {
 
     network_interface {
         network = each.value.compute_network
+        access_config {
+      // Ephemeral IP
+        }
+
     }
 
     service_account {
