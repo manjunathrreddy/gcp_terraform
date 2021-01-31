@@ -9,6 +9,8 @@ resource "google_compute_instance" "test_instance" {
 
 //    tags = ["",""]
 
+ tags = ["allow-http","allow-https"]
+
     boot_disk {
         initialize_params {
             image = each.value.compute_image
