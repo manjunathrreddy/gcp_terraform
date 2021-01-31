@@ -11,8 +11,8 @@ resource "google_compute_instance" "test_instance" {
 
     boot_disk {
         initialize_params {
-            image = "centos-8"
-            size = "50"
+            image = each.value.compute_image
+            size = each.value.compute_size
         }
     }
 
