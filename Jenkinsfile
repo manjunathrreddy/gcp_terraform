@@ -41,6 +41,7 @@ pipeline {
                     notFailBuild: true,
                     patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
                                [pattern: '.propsfile', type: 'EXCLUDE']])
+            echo "The project workspace : $WORKSPACE is cleaned up"
         }
     }
 
