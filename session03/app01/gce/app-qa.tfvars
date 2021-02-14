@@ -1,4 +1,4 @@
-credentials_file = "${file("${var.path}/gcp-homecompany-dev-key.json"
+credentials_file = "${file("${var.path}/gcp-homecompany-dev-key.json")}"
 project_id = "gcp-homecompany-dev"
 
 test_servers = [{
