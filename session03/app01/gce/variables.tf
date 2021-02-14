@@ -9,3 +9,5 @@ variable "disk_type" { default = "" }
 variable "disk_name" { default = "" }
 
 variable "disk_size" { default = "" }
+
+variable "project_id" { default = "" }
