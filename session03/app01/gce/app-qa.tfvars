@@ -1,5 +1,5 @@
-credentials_file = "gcp-homecompany-dev-key.json"
-project_id = "gcp-homecompany-dev"
+credentials_file = "triple-virtue.json"
+project_id = "triple-virtue-271517"
 
 test_servers = [{
     id = 1
