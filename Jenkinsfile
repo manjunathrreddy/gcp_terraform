@@ -4,7 +4,7 @@ pipeline {
         stage('checkout') {
             steps {
                 echo " This is a code to checkout"
-                sh 'terraform -v'
+ //               sh 'terraform -v'
 
             }
         }
