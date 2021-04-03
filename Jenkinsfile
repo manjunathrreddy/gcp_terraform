@@ -8,9 +8,10 @@ pipeline {
             }
         }
 
-        stage('Build') { 
+        stage('Init') { 
             steps {
                 echo "this is a code to build"
+                sh terraforn version
 
             }
         }
