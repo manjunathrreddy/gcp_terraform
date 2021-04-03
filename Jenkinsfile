@@ -11,14 +11,14 @@ pipeline {
         stage('Init') { 
             steps {
                 echo "this is a code to build"
-                sh terraforn version
-
+                sd 'cd $WORKSPACE'
+                sh 'terraform init .'
             }
         }
 
-        stage ('Test') {
+        stage ('Plan') {
             steps {
-                echo "This is a code to Test"
+                sh 'terraform apply'
 
             }
 
