@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "this is a code to build"
                 sh 'cd $WORKSPACE'
-                sh 'terraform init .'
+                sh 'sudo terraform init .'
             }
         }
 
