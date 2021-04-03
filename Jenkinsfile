@@ -4,6 +4,7 @@ pipeline {
         stage('checkout') {
             steps {
                 echo " This is a code to checkout"
+                h 'sudo terraform -v .'
 
             }
         }
