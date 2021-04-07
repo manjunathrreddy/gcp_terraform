@@ -9,8 +9,10 @@ resource "google_compute_instance" "test_instance" {
 
 //    tags = ["",""]
 
-     can_ip_forward = "false"
+
     description = "This is our virtual machines"
+
+        tags = ["allow-http","allow-https"]
 
         tags = ["allow-http","allow-https"]
 
