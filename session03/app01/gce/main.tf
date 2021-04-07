@@ -14,7 +14,7 @@ resource "google_compute_instance" "test_instance" {
 
         tags = ["allow-http","allow-https"]
 
-        tags = ["allow-http","allow-https"]
+     
 
 
     boot_disk {
