@@ -9,7 +9,11 @@ resource "google_compute_instance" "test_instance" {
 
 //    tags = ["",""]
 
- tags = ["allow-http","allow-https"]
+     can_ip_forward = "false"
+    description = "This is our virtual machines"
+
+        tags = ["allow-http","allow-https"]
+
 
     boot_disk {
         initialize_params {
