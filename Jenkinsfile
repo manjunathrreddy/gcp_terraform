@@ -1,5 +1,9 @@
 pipeline {
     agent any
+           tools{
+            terraform 'jenkins-terraform'
+
+        } 
     stages {
         stage('checkout') {
             steps {
@@ -13,7 +17,7 @@ pipeline {
             steps {
                 echo "this is a code to build"
                 sh 'cd $WORKSPACE'
-                sh 'terraform init .'
+                sh 'terraform init'
             }
         }
 
