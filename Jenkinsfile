@@ -16,7 +16,7 @@ pipeline {
         stage('Init') { 
             steps {
                 echo "this is a code to build"
-                sh 'cd $WORKSPACE'
+                sh 'cd $WORKSPACE/session01/gce'
                 sh ' ls -l'
                 sh 'terraform init'
             }
