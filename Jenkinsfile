@@ -16,15 +16,13 @@ pipeline {
         stage('Init') { 
             steps {
                 echo "this is a code to build"
-                sh 'cd $WORKSPACE/session01/gce'
-                sh ' ls -l'
-                sh 'terraform init'
+                sh 'terraform init $WORKSPACE/session01/gce'
             }
         }
 
         stage ('Plan') {
             steps {
-                sh 'terraform  plan'
+                sh 'terraform  plan $WORKSPACE/session01/gce'
 
             }
 
