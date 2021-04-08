@@ -30,7 +30,7 @@ pipeline {
 
         stage ('Apply') {
             steps {
-                sh 'terraform  apply $WORKSPACE/session01/gce --auto-approve'
+                sh 'terraform  apply --auto-approve $WORKSPACE/session01/gce'
 
             }
 
