@@ -28,9 +28,9 @@ pipeline {
 
         }
 
-        stage ('Deploy') {
+        stage ('Apply') {
             steps {
-                echo "This is a code to Deploy"
+                sh 'terraform  apply $WORKSPACE/session01/gce --auto-approve'
 
             }
 
