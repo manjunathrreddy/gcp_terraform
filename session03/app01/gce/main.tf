@@ -26,6 +26,7 @@ resource "google_compute_instance" "test_instance" {
 
     network_interface {
         network = each.value.compute_network
+        subnetwork = each.value.compute_subnet
         access_config {
       // Ephemeral IP
         }
