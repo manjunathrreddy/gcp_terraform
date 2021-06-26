@@ -14,4 +14,4 @@ variable "project_id" { default = "" }
 
 variable "credentials_file" { default = "" }
 
-variable "path" {  default = "/home/vagrant/gcp_credentials/keys" }
+variable "path" {  default = "/home/admin/gcp_credentials/keys" }
