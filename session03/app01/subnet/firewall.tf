@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "allow-http-port" {
     name = "allow-http-port"
-    network = "home_network"
+    network = "home-network"
 
     allow {
         protocol = "tcp"
@@ -13,7 +13,7 @@ resource "google_compute_firewall" "allow-http-port" {
 
 resource "google_compute_firewall" "allow-https-port" {
     name = "allow-https-port"
-    network = "home_network"
+    network = "home-network"
 
     allow {
         protocol = "tcp"
